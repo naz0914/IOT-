@@ -17,18 +17,63 @@
 
 ---
 
+## 📌 專案全景摘要海報與導讀說明 (Executive Infographic & Overview)
+
+<div align="center">
+  <img src="./Gemini_Generated_Image_ivdx4yivdx4yivdx.jpg" alt="Hybrid TPA-Agent 專案全景架構海報" width="100%" />
+  <p><em>全景資訊圖：Hybrid TPA-Agent 核心架構、A-Z SOP 規範對照、四層八模組與預期評估成效</em></p>
+</div>
+
+### 🔍 全景海報核心板塊深度解析
+
+本全景資訊海報為本專題之總體研究藍圖，彙整了論文提案的七大核心精華：
+
+1. **符合度總覽與 Abstract 六段式 (A–F)**
+   * **A (Attention Getter)**：市場雜訊與高頻波動劇烈，散戶面臨嚴重的資訊過載與決策情緒偏誤。
+   * **B (But/However)**：傳統技術指標缺乏空間連續感，純 LLM 則易產生嚴重的數值與空間幻覺。
+   * **C (Cure)**：提出 Hybrid TPA-Agent 解耦式混合架構，實現「數值幾何運算」與「語意脈絡推理」徹底分離。
+   * **D (Development)**：以確定性演算法辨識供需區（S&D）＋ XGBoost 預測條件勝率 ＋ LLM 執行思維鏈（CoT）推理。
+   * **E (Experiments)**：採用 BTC/USDT 與 ETH/USDT 5m/15m 歷史資料，嚴格對比傳統雙指標（EMA+RSI）、純機器學習與純 LLM。
+   * **F (Findings)**：預期過濾掉 >40% 的假突破雜訊，獲利因子（Profit Factor）預期達 > 1.8，最大回撤（MDD）抑制於 12% 內。
+
+2. **文獻演進與相關研究缺口 (2.2 Introduction G–L & 2. Related Work M–O)**
+   * 系統化梳理既有量化方法的缺陷：指標派滯後、純 ML 缺乏空間座標、純 LLM 生成隨機性過高（重現率低）。本系統填補了「空間感知 × 數據計算 × 脈絡推理」的交易鐵三角缺口。
+
+3. **理論基礎與十大深度理解問題 (3.1–3.3 Deep Research)**
+   * 深入探討價格帶量跌破時的支撐壓力轉換機制（S/R Flip）、低波動突破時 ML 的誤判風險（Volume Trap）、時間週期縮小帶來的成本侵蝕，以及真實機構訂單流的吸收證據（Pinbar、ChoCh）。
+
+4. **系統架構與四層八模組設計 (4.1–4.4 Proposed Scheme)**
+   * **1. 輸入與資料接收層**：使用者參數配置與低延遲 OHLCV 行情串流。
+   * **2. 核心分析運算層**：供需區幾何標記與 XGBoost 條件勝率過濾網。
+   * **3. LLM 推理與領域知識層**：封裝裸 K 價格行為學規則，執行 CoT 多空論證。
+   * **4. 風控管理與決策輸出層**：動態 ATR 停損/停利反推，正期望值過濾，輸出 APPROVED 或 WAIT。
+
+5. **26 字母學術結構映射 (5.1–5.3 A2Z SOP Outline)**
+   * 嚴格遵循 2020 A-Z SOP 規範，建立從動機、研究缺口、方法設計、實作偽代碼到模擬驗證與邊界總結的完整閉環。
+
+6. **評估規劃與預期成效 (6.1–6.3 Simulation & Results)**
+   * 採用 2023–2024 兩年期回測資料，嚴格納入手續費（Taker 0.04%）與滑點成本，並導入時點控制（Point-in-time）杜絕歷史資訊洩漏。各基準模型在勝率、夏普比率與回撤控制之預期對比如表中所示。
+
+7. **整體結論三大核心亮點 (Conclusion Highlights)**
+   * **7.1 高度規範符合**：結構完整吻合頂級學術標準與可否證性原則。
+   * **7.2 方法論嚴謹**：提供具備時點控制與壓力測試的可複現研究原型。
+   * **7.3 架構徹底解耦**：根除生成式 AI 數值幻覺，以正數學期望值驅動決策。
+
+---
+
 ## 目錄 (Table of Contents)
 
-1. [專案摘要 (Abstract)](#1-專案摘要-abstract)
-2. [研究背景與痛點 (Motivation & Background)](#2-研究背景與痛點-motivation--background)
-3. [學術規範對照 (2020 A-Z SOP)](#3-學術規範對照-2020-a-z-sop)
-4. [系統核心架構：四層八模組 (System Architecture)](#4-系統核心架構四層八模組-system-architecture)
-5. [決策流程與演算法 (Decision Flow & Algorithm)](#5-決策流程與演算法-decision-flow--algorithm)
-6. [風控機制與數學公式 (Formulation & Risk Management)](#6-風控機制與數學公式-formulation--risk-management)
-7. [端到端實例穿透解析 (End-to-End Walkthrough)](#7-端到端實例穿透解析-end-to-end-walkthrough)
-8. [實驗設計與假說目標 (Simulation & Expected Targets)](#8-實驗設計與假說目標-simulation--expected-targets)
-9. [十大深度專業爭辯與邊界檢驗 (Deep Understanding)](#9-十大深度專業爭辯與邊界檢驗-deep-understanding)
-10. [專案檔案結構 (Repository Structure)](#10-專案檔案結構-repository-structure)
+1. [專案全景摘要海報與導讀說明 (Executive Infographic)](#-專案全景摘要海報與導讀說明-executive-infographic--overview)
+2. [專案摘要 (Abstract)](#1-專案摘要-abstract)
+3. [研究背景與痛點 (Motivation & Background)](#2-研究背景與痛點-motivation--background)
+4. [學術規範對照 (2020 A-Z SOP)](#3-學術規範對照-2020-a-z-sop)
+5. [系統核心架構：四層八模組 (System Architecture)](#4-系統核心架構四層八模組-system-architecture)
+6. [決策流程與演算法 (Decision Flow & Algorithm)](#5-決策流程與演算法-decision-flow--algorithm)
+7. [風控機制與數學公式 (Formulation & Risk Management)](#6-風控機制與數學公式-formulation--risk-management)
+8. [端到端實例穿透解析 (End-to-End Walkthrough)](#7-端到端實例穿透解析-end-to-end-walkthrough)
+9. [實驗設計與假說目標 (Simulation & Expected Targets)](#8-實驗設計與假說目標-simulation--expected-targets)
+10. [十大深度專業爭辯與邊界檢驗 (Deep Understanding)](#9-十大深度專業爭辯與邊界檢驗-deep-understanding)
+11. [專案檔案結構 (Repository Structure)](#10-專案檔案結構-repository-structure)
 
 ---
 
@@ -251,6 +296,7 @@ $$E = (W \times RR) - ((1 - W) \times 1.0)$$
 ```text
 AIoT/
 ├── README.md                                             # 專案總覽與架構文檔
+├── .gitignore                                            # Git 忽略設定（避免金鑰與快取上傳）
 ├── 架構圖.png                                             # Layer 1 ~ Layer 4 系統架構圖
 ├── 流程圖flowchart.png                                    # 端到端決策與風控執行流程圖
 ├── IMG_9464.png                                          # 2020 A-Z SOP 學術規範指引圖
